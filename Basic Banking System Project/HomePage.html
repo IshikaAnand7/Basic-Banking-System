@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <link rel="stylesheet" href="/style2.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@1&display=swap" rel="stylesheet">
+    
+  </body>
+
+    <title>Home Page</title>
+</head>
+<body>
+    <script>
+        function showTime() {
+            var today = new Date();
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+            var meridiem = hour >= 12 ? 'PM' : 'AM';
+            hour = hour % 12;
+            hour = hour ? hour : 12;
+            hour = checkTime(hour);
+            minute = checkTime(minute);
+            second = checkTime(second);
+            document.getElementById('txt').innerHTML = hour + ":" + minute + ":" + second + " " + meridiem;
+            var time = setTimeout(showTime, 1000);
+        }
+    
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            };
+            return i;
+        }
+
+
+    </script>
+    
+    <body onload="showTime()">
+        <div id="loader" class="center"></div>
+        <div class="container mw-100">
+            <nav class="navbar navbar-light navig">
+                <a class="navbar-brand shine" href="/HomePage.html">Basic Banking System</a>
+                <div id="txt" style="font-weight: 500;"></div>
+                <div class="float-none">
+                    <a href="/contactus.html"> <button type="submit"
+                            class="btn btn-outline-dark user shine">Contact Us</button></a>
+            </div>
+            </nav>
+    
+    <div class="card-container ">
+    <div class="row">
+        <div class="col wrapper wrapit in-center">
+            <p class="text-dark secure shine">Online Transfer , Secure Transfer.</p>
+        <div class="row">
+        <div class="col-4">
+            <form action="customer.html" method="GET">
+                <div class="card bg-dark text-white border border-info" style="width: 20rem;">
+                    <img src="../Images/customer1.png" class="card-img-top" alt="Customer picture">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Card title</h5> -->
+                      <p class="card-text ">Click here to view all the Customers</p>
+                      <a href="customer.html" class="btn btn-outline-primary">View All Customers</a>
+                    </div>
+                  </div>
+            </form>
+        </div>
+
+        <div class="col-4 ">
+            <form action="customer.html" method="GET">
+                <div class="card bg-dark text-white border border-info" style="width: 20rem;">
+                    <img src="../Images/transfer.jfif" class="card-img-top " alt="Transfer money picture">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Card title</h5> -->
+                      <p class="card-text">Click here to Transfer Money</p>
+                      <a href="transactions.html" class="btn btn-outline-primary">Transfer Money</a>
+                    </div>
+                  </div>
+            </form>
+        </div>
+
+        <div class="col-4">
+            <form action="history.html" method="GET">
+                <div class="card bg-dark text-white border border-info mb-3" style="width : 20rem">
+                    <img src="../Images/transaction.png" class="card-img-top" alt="Transaction image">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Card title</h5> -->
+                      <p class="card-text">Click here to view Transaction History.</p>
+                      <a href="transactionhistory.html" class="btn btn-outline-primary">Transaction History</a>
+                    </div>
+                  </div>
+                </form>
+        </div>
+        </div>
+
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+         <p class="foot ">© Copyright 2021<span id="yyear"></span> 
+            Ishika Anand | The Sparks Foundation 
+    </footer>
+    
+    </body>
+    <style>
+        body {
+            overflow-y: hidden;
+        }
+    </style>
+    <script>
+        document.onreadystatechange = function () {
+            if (document.readyState !== "complete") {
+                document.querySelector(
+                    "body").style.visibility = "hidden";
+                document.querySelector(
+                    "#loader").style.visibility = "visible";
+            } else {
+                document.querySelector(
+                    "#loader").style.display = "none";
+                document.querySelector(
+                    "body").style.visibility = "visible";
+            }
+        };
+    
+   
+        var textWrapper = document.querySelector('.ml1 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+       .add({
+       targets: '.ml1 .letter',
+       scale: [0.3,1],
+       opacity: [0,1],
+       translateZ: 0,
+       easing: "easeOutExpo",
+       duration: 600,
+       delay: (el, i) => 70 * (i+1)
+       }).add({
+      targets: '.ml1 .line',
+      scaleX: [0,1],
+      opacity: [0.5,1],
+      easing: "easeOutExpo",
+      duration: 700,
+      offset: '-=875',
+      delay: (el, i, l) => 80 * (l - i)
+      }).add({
+      targets: '.ml1',
+      opacity: 0,
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 1000
+      });
+    </script>
+
+
+  </body>
+</body>
+</html>
